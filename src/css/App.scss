@@ -1,10 +1,12 @@
 $text-color:rgb(100, 96, 96);
+$text-color-opacity:rgba(100, 96, 96, 0.713);
 $text-color-white: rgb(255, 255, 255);
 $background-color: rgb(13, 13, 13);
 $display-grid: grid;
 $init-medi: 0px;
 $center: center;
 $color-red:rgba(255, 0, 0, 0.686);
+$text-h3:rgb(51, 51, 51);
 
 
 //creando un mixin para centrar elemt con grillas
@@ -23,14 +25,14 @@ $color-red:rgba(255, 0, 0, 0.686);
    
 }
 //quitando margin y padding a ul mediante 
-@mixin padding-margin($padding,$margin){
-    padding: $padding;
-    margin: $margin;
+@mixin padding-margin($measure...){
+    padding: $measure;
+    margin: $measure;
 }
-%li-style{
+@mixin li-style($padd,$color){
     list-style: none;
-    border-top: 1px solid $text-color;
-    padding: 1rem;
+    border-top: 1px solid $color;
+    padding: $padd;
 }
 @mixin a-style($color){
     color:$color;
@@ -64,11 +66,11 @@ header{
         width: 100%;
     }
    ul{
-        @include padding-margin(0,0);
+        @include padding-margin(0);
         
     }
     li{
-        @extend %li-style;
+        @include li-style(1rem,$text-color);
     }
     a{
         @include a-style($text-color-white);
@@ -78,4 +80,38 @@ header{
     }
 
 }
-// Section home
+// Section home MAnual de usuario
+.user-handbook{
+
+
+    h3{
+        color:$text-h3;
+        @include padding-margin(0);
+        padding-top: 2rem; 
+        
+    }
+    p{
+        @include padding-margin(0);
+        color:$text-color-opacity;
+        
+    }
+    ul{
+        @include padding-margin(0);
+        margin-top:1rem;        
+    }
+    li{
+        @include li-style(0.5rem,$text-color-opacity);
+        font-size: 1rem;
+        color:$text-h3;
+        .span-sec{
+            font-size: 0.9rem;
+            color:$text-color-opacity;
+        }
+        
+    }
+    .icon-handbook{
+        margin-right: 1rem;
+        color:$text-color-opacity;
+    }
+    
+}
