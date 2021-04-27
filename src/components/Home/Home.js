@@ -3,6 +3,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faKey} from "@fortawesome/free-solid-svg-icons";
 import {faKeyboard} from "@fortawesome/free-solid-svg-icons";
 import {faHandPointer} from "@fortawesome/free-solid-svg-icons";
+import { Form} from "./Form";
 
 export const Home =()=>(
   <section className="section-home">
@@ -26,6 +27,7 @@ export const Home =()=>(
           <span className="span-sec"> (Finalmente podras copiar el texto cifrado o descifrado)</span>        
         </li>
       </ul>
-    </article>    
+    </article>
+    <Form/>  
   </section>
 );

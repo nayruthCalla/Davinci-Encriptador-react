@@ -115,3 +115,38 @@ header{
     }
     
 }
+//styles input
+@mixin input-basic($padding,$margin,$width, $heigth,$colorBorder, $radio) {
+    padding: $padding;
+    margin: $margin;
+    width: $width;
+    height: $heigth;
+    border: 1px solid $colorBorder;
+    border-radius: $radio; 
+    
+}
+//Section formulario
+.form-style{
+    margin-top:3rem;
+    .input-clave{
+        @include input-basic(0.8rem,1rem, auto,auto , $text-color,0.5rem);
+    }
+    .input-texto{
+        @include input-basic(1rem,1rem, auto,3rem , $text-color,0.5rem);
+    }
+    .input-btn-code{
+        @include input-basic(0.8rem,1rem, 40%,auto ,  rgba(214, 30, 6, 0.816),0.5rem);
+        background: rgba(214, 30, 6, 0.816);        
+        font-family: 'Orelega One', cursive;
+        color: $text-color-white;
+
+    }
+    .input-btn-decod{
+        @include input-basic(0.8rem,0, 40%,auto , $text-color,0.5rem);
+        background: #00135e;
+        font-family: 'Orelega One', cursive;
+        color: $text-color-white;
+    }
+
+    
+}
